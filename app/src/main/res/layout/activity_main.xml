@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="27dp"
+    tools:layout_editor_absoluteY="95dp">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -19,63 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.117" />
 
-    <TextView
-        android:id="@+id/txtFirstPlayer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="65dp"
-        android:text="Frist player name:"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtSecondPlayer"
-        app:layout_constraintEnd_toStartOf="@+id/editTxtFirstName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTxtFirstName"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="65dp"
-        android:ems="10"
-        android:hint="Nickname"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtSecondName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtFirstPlayer"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtSecondPlayer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="368dp"
-        android:text="Frist player name:"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTxtSecondName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFirstPlayer" />
-
-    <EditText
-        android:id="@+id/editTxtSecondName"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="368dp"
-        android:ems="10"
-        android:hint="Nickname"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtSecondPlayer"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtFirstName" />
 
     <Button
         android:id="@+id/btnQuit"
@@ -96,6 +41,57 @@
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFirstPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="235dp"
+        android:layout_marginEnd="54dp"
+        android:text="First player:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSecondPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="1dp"
+        android:text="Second player:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edittxtSedoncName"
+        app:layout_constraintEnd_toStartOf="@+id/edittxtSedoncName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edittxtSedoncName"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtSecondPlayer"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="171dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtFirstPlayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtFirstPlayer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
