@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnQuit, btnStart;
+    Button btnQuit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +24,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnQuit = (Button) findViewById(R.id.btnQuit);
-        btnQuit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnQuit = findViewById(R.id.btnQuit);
+        btnQuit.setOnClickListener(v -> finish());
     }
 }
