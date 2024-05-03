@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -62,7 +64,7 @@ public class TicTacToeBoard extends View {
 
         //drawXColor(canvas, 1, 1);
 
-        //drawOColor(canvas, 0, 0);
+        //drawOColor(canvas, 1, 1);
 
     }
     @SuppressLint("ClickableViewAccessibility")
@@ -76,6 +78,18 @@ public class TicTacToeBoard extends View {
         if(action == MotionEvent.ACTION_DOWN){
             int row = (int) Math.ceil(y/cellSize);
             int col = (int) Math.ceil(x/cellSize);
+
+            if(game.updateGameBoard(row, col)){
+                invalidate();
+
+                if(game.getPlayer() % 2 == 0){
+                    game.setPlayer(game.getPlayer()-1);
+                }
+                else
+                {
+                    game.setPlayer(game.getPlayer()+1);
+                }
+            }
 
             invalidate();
 
@@ -131,6 +145,17 @@ public class TicTacToeBoard extends View {
 
         paint.setColor(oColor);
 
-        canvas.drawCircle((col+1)*cellSize/2, (row+1)*cellSize/2, cellSize/2, paint);
+        canvas.drawOval(col*cellSize, row*cellSize, col*cellSize+cellSize, row*cellSize+cellSize, paint);
+    }
+     public void setUpGame(Button playAgain, Button home, TextView playerDisplay,  String[] name){
+        game.setPlayAgainBTN(playAgain);
+        game.setHomeBTN(home);
+        game.setPlayerTurn(playerDisplay);
+
+
+     }
+    public void resetGame(){
+        game.Reset();
+
     }
 }

@@ -1,8 +1,29 @@
 package com.example.android_tictactoe.Controller;
 
- public class GameLogic {
+import android.widget.Button;
+import android.widget.TextView;
+
+public class GameLogic {
      public int[][] getGameBoard() {
          return gameBoard;
+     }
+
+     private Button playAgainBTN;
+     private Button homeBTN;
+     private TextView playerTurn;
+
+    public void setHomeBTN(Button homeBTN) {
+        this.homeBTN = homeBTN;
+    }
+
+    public void setPlayerTurn(TextView playerTurn) {
+        this.playerTurn = playerTurn;
+    }
+
+    private int player = 1;
+
+     public void setPlayer(int player) {
+         this.player = player;
      }
 
      /// X = 1
@@ -19,11 +40,32 @@ package com.example.android_tictactoe.Controller;
          }
      }
 
-     public void GameBoardAddX(int row, int col){
-         gameBoard[row][col] = 1;
+      public int getPlayer(){
+         return player;
+      }
+     public boolean updateGameBoard(int row, int col){
+         if(gameBoard[row-1][col-1] == 0)
+         {
+             gameBoard[row-1][col-1] = player;
+         }
+         else
+         {
+            return  false;
+         }
+         return  true;
      }
 
-     public void GameBoardAddO(int row, int col){
-         gameBoard[row][col] = 2;
+     public void Reset(){
+         for(int x = 0; x < 3; x++ ){
+             for (int y = 0; y < 3; y++){
+                 gameBoard[x][y] = 0;
+             }
+         }
      }
+
+    public void setPlayAgainBTN(Button playAgainBTN){
+        this.playAgainBTN = playAgainBTN;
+    }
+
+
 }

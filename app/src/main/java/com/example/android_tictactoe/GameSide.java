@@ -1,5 +1,6 @@
 package com.example.android_tictactoe;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -10,9 +11,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.android_tictactoe.Data.TicTacToeBoard;
+
 public class GameSide extends AppCompatActivity {
 
     Button btnHome, btnAgain;
+
+    TicTacToeBoard ticTacToeBoard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +30,18 @@ public class GameSide extends AppCompatActivity {
             return insets;
         });
 
+        ticTacToeBoard = findViewById(R.id.ticTacToe);
+
         btnHome = findViewById(R.id.btnHome);
         btnHome.setOnClickListener(v ->{
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+        });
+
+        btnAgain = findViewById(R.id.btnPlayAgain);
+        btnAgain.setOnClickListener(v ->{
+            ticTacToeBoard.resetGame();
+            ticTacToeBoard.invalidate();
         });
     }
 }
