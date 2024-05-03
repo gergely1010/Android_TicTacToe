@@ -14,6 +14,9 @@ public class GameLogic {
     private int player = 1;
     public int[][] gameBoard;
 
+    public int[] winType = {-1, -1, -1};
+
+    public boolean winningLine;
 
     public GameLogic(){
 
@@ -49,6 +52,13 @@ public class GameLogic {
          return gameBoard;
      }
 
+     public int[] getWinType(){
+        return winType;
+     }
+
+     public boolean isWinningLine(){
+        return winningLine;
+     }
      public int getPlayer(){
          return player;
       }
@@ -86,21 +96,29 @@ public class GameLogic {
          for(int x = 0; x < 3; x++ ){
              if(gameBoard[x][0] == gameBoard[x][1] && gameBoard[x][0] == gameBoard[x][2]  && gameBoard[x][0] != 0){
                  WeHaveWinner();
+                 winType = new int[] {x, 0, 1};
+                 winningLine = true;
                  return true;
              }
          }
          for(int y = 0; y < 3; y++ ){
              if(gameBoard[0][y] == gameBoard[1][y] && gameBoard[0][y] == gameBoard[2][y]  && gameBoard[0][y] != 0){
                  WeHaveWinner();
+                 winType = new int[] {0, y, 2};
+                 winningLine = true;
                  return true;
              }
          }
          if(gameBoard[0][0] == gameBoard[1][1] && gameBoard[0][0] == gameBoard[2][2]  && gameBoard[0][0] != 0){
              WeHaveWinner();
+             winType = new int[] {0, 2, 3};
+             winningLine = true;
              return true;
          }
          if(gameBoard[2][0] == gameBoard[1][1] && gameBoard[2][0] == gameBoard[0][2]  && gameBoard[0][2] != 0){
              WeHaveWinner();
+             winType = new int[] {2, 2, 4};
+             winningLine = true;
              return true;
          }
          int boardFilled = 0;
@@ -115,6 +133,7 @@ public class GameLogic {
              playAgainBTN.setVisibility(View.VISIBLE);
              homeBTN.setVisibility(View.VISIBLE);
              playerTurn.setText(("DRAW :/ !"));
+             return true;
          }
          return false;
      }
@@ -132,5 +151,6 @@ public class GameLogic {
          playAgainBTN.setVisibility(View.INVISIBLE);
          homeBTN.setVisibility(View.INVISIBLE);
          playerTurn.setText("");
+         winningLine = false;
      }
 }
