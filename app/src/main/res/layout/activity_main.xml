@@ -51,7 +51,7 @@
         android:layout_marginEnd="54dp"
         android:text="First player:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextFirstName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,12 +64,12 @@
         android:layout_marginBottom="1dp"
         android:text="Second player:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/edittxtSedoncName"
-        app:layout_constraintEnd_toStartOf="@+id/edittxtSedoncName"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSecondName"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSecondName"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edittxtSedoncName"
+        android:id="@+id/editTextSecondName"
         android:layout_width="0dp"
         android:layout_height="41dp"
         android:layout_marginTop="55dp"
@@ -79,10 +79,10 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtSecondPlayer"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextFirstName"
         android:layout_width="171dp"
         android:layout_height="44dp"
         android:layout_marginEnd="50dp"
