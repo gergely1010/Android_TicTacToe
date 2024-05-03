@@ -2,9 +2,9 @@
 <resources>
     <declare-styleable name="TicTacToeBoard">
         <attr name="boardColor" format="color"/>
-        <attr name="XColor" format="color"/>
-        <attr name="OColor" format="color"/>
-        <attr name="WinnigLineColor" format="color"/>
+        <attr name="xColor" format="color"/>
+        <attr name="oColor" format="color"/>
+        <attr name="winnigLineColor" format="color"/>
     </declare-styleable>
     
 </resources>
