@@ -93,6 +93,7 @@ public class TicTacToeBoard extends View {
 
             invalidate();
 
+
             return true;
         }
         return false;
@@ -114,8 +115,6 @@ public class TicTacToeBoard extends View {
     }
 
     private void drawMarkers(Canvas canvas){
-
-
         for(int x = 0; x < 3; x++ ){
             for (int y = 0; y < 3; y++){
                 if(game.gameBoard[x][y] != 0)
@@ -147,12 +146,11 @@ public class TicTacToeBoard extends View {
 
         canvas.drawOval(col*cellSize, row*cellSize, col*cellSize+cellSize, row*cellSize+cellSize, paint);
     }
-     public void setUpGame(Button playAgain, Button home, TextView playerDisplay,  String[] name){
+    public void setUpGame(Button playAgain, Button home, TextView playerDisplay,  String[] names){
         game.setPlayAgainBTN(playAgain);
         game.setHomeBTN(home);
         game.setPlayerTurn(playerDisplay);
-
-
+        game.setPlayerNames(names);
      }
     public void resetGame(){
         game.Reset();

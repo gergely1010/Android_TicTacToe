@@ -3,7 +3,9 @@ package com.example.android_tictactoe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +17,9 @@ import com.example.android_tictactoe.Data.TicTacToeBoard;
 
 public class GameSide extends AppCompatActivity {
 
-    Button btnHome, btnAgain;
+    //Button btnHome, btnAgain;
 
-    TicTacToeBoard ticTacToeBoard;
+    private TicTacToeBoard ticTacToeBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +32,29 @@ public class GameSide extends AppCompatActivity {
             return insets;
         });
 
+
+
+        Button playAgainBTN = findViewById(R.id.btnPlayAgain);
+        Button homeBTN = findViewById(R.id.btnHome);
+        TextView txtTitleBTN = findViewById(R.id.textTitle);
+
+        playAgainBTN.setVisibility(View.GONE);
+        homeBTN.setVisibility(View.GONE);
+
+        String[]  playerNames = getIntent().getStringArrayExtra("PLAYER_NAMES");
+
         ticTacToeBoard = findViewById(R.id.ticTacToe);
 
-        btnHome = findViewById(R.id.btnHome);
-        btnHome.setOnClickListener(v ->{
+
+        ticTacToeBoard.setUpGame(playAgainBTN, homeBTN, txtTitleBTN, playerNames);
+
+        homeBTN.setOnClickListener(v ->{
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
 
-        btnAgain = findViewById(R.id.btnPlayAgain);
-        btnAgain.setOnClickListener(v ->{
+
+        playAgainBTN.setOnClickListener(v ->{
             ticTacToeBoard.resetGame();
             ticTacToeBoard.invalidate();
         });
