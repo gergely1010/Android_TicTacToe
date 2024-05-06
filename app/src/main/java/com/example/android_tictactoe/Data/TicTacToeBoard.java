@@ -21,10 +21,9 @@ public class TicTacToeBoard extends View {
     private final int boardColor;
     private final int xColor;
     private final int oColor;
-    private final int winnigLineColor;
+    private final int winningLineColor;
     private final Paint paint = new Paint();
     private  int cellSize = getWidth()/3;
-
     private GameLogic game;
 
     public TicTacToeBoard(Context context, @Nullable AttributeSet attrs) {
@@ -37,7 +36,7 @@ public class TicTacToeBoard extends View {
             boardColor = board.getInteger(R.styleable.TicTacToeBoard_boardColor, 0);
             xColor = board.getInteger(R.styleable.TicTacToeBoard_xColor, 0);
             oColor = board.getInteger(R.styleable.TicTacToeBoard_oColor, 0);
-            winnigLineColor = board.getInteger(R.styleable.TicTacToeBoard_winnigLineColor, 0);
+            winningLineColor = board.getInteger(R.styleable.TicTacToeBoard_winnigLineColor, 0);
         }
         finally{
             board.recycle();
@@ -143,20 +142,20 @@ public class TicTacToeBoard extends View {
         canvas.drawOval(col*cellSize, row*cellSize, col*cellSize+cellSize, row*cellSize+cellSize, paint);
     }
     private void drawHorizontalLine(Canvas canvas, int row, int col){
-        paint.setColor(winnigLineColor);
+        paint.setColor(winningLineColor);
         canvas.drawLine(col, row*cellSize+cellSize/2, col*3, row*cellSize+cellSize/2, paint);
     }
     private void drawVerticalLine(Canvas canvas, int row, int col){
-        paint.setColor(winnigLineColor);
+        paint.setColor(winningLineColor);
         canvas.drawLine(col*cellSize+cellSize/2, row, col*cellSize+cellSize/2, cellSize*3, paint);
     }
 
     private void drawGrownLine(Canvas canvas, int row, int col){
-        paint.setColor(winnigLineColor);
+        paint.setColor(winningLineColor);
         canvas.drawLine(0, 0, cellSize*3, cellSize*3, paint);
     }
     private void drawDesLine(Canvas canvas, int row, int col){
-        paint.setColor(winnigLineColor);
+        paint.setColor(winningLineColor);
         canvas.drawLine(0, cellSize*3, cellSize*3, 0, paint);
 
     }

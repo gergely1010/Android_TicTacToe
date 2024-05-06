@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        app:showAsAction = "always"
+        android:title = "Valami"
+        android:icon="@drawable/baseline_bedroom_baby_24">
+        <menu>
+            <item
+                android:id="@+id/ticTacToeGame"
+                android:title="Tic Tac Toe Game"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/chessGame"
+                android:title="Chess Game"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>

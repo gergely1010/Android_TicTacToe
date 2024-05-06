@@ -32,8 +32,6 @@ public class GameSide extends AppCompatActivity {
             return insets;
         });
 
-
-
         Button playAgainBTN = findViewById(R.id.btnPlayAgain);
         Button homeBTN = findViewById(R.id.btnHome);
         TextView txtTitleBTN = findViewById(R.id.textTitle);
