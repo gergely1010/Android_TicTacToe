@@ -21,6 +21,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btnStart;
+    //TODO: valamiért nem hívja meg az android ezt funckciót
+    // kellenem, mert így menüpont nem fog megjelnni
+
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,5 +42,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btnStart = findViewById(R.id.btnMainStart);
+        btnStart.setOnClickListener(V -> {
+            Intent intent = new Intent(this, HighScorePanel.class);
+            startActivity(intent);
+        });
     }
+
 }
