@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,89 +11,15 @@
     tools:layout_editor_absoluteX="27dp"
     tools:layout_editor_absoluteY="95dp">
 
+
     <TextView
-        android:id="@+id/txtTitle"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tic-Tac-Toe App!"
+        android:layout_marginTop="103dp"
+        android:text="Game App Start"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
-
-
-    <Button
-        android:id="@+id/btnQuit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:text="Quit"
-        app:layout_constraintBottom_toBottomOf="@+id/btnStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnStart" />
-
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="111dp"
-        android:text="Start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/txtFirstPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="54dp"
-        android:text="First player:"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextFirstName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtSecondPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="1dp"
-        android:text="Second player:"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextSecondName"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSecondName"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextSecondName"
-        android:layout_width="0dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtSecondPlayer"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
-
-    <EditText
-        android:id="@+id/editTextFirstName"
-        android:layout_width="171dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtFirstPlayer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtFirstPlayer" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
